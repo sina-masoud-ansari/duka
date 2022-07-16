@@ -82,7 +82,7 @@ class CSVDumper:
 
         Logger.info("Writing {0}".format(file_name))
 
-        with open(join(self.folder, file_name), 'w') as csv_file:
+        with open(join(self.folder, file_name), 'w', newline="") as csv_file:
             writer = csv.DictWriter(csv_file, fieldnames=self.get_header())
             if self.include_header:
                 writer.writeheader()
